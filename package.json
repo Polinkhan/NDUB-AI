@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "next dev --port 5050",
+    "build": "next build && node scripts/prepare-standalone.mjs",
+    "build:standalone": "npm run build",
+    "start": "PORT=${PORT:-5050} node .next/standalone/server.js",
+    "start:standalone": "npm run start",
     "lint": "eslint",
     "test": "vitest run"
   },

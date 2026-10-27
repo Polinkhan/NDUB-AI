@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Students sign in with their existing NDUB portal credentials.
+Open [http://localhost:5050](http://localhost:5050). Students sign in with their existing NDUB portal credentials.
 
 ## Commands
 
@@ -25,3 +25,15 @@ npm run build
 ```
 
 Portal credentials are never stored. Access and refresh tokens use secure HTTP-only cookies, while conversation history stays in the current browser tab's session storage and is cleared on logout.
+
+## Standalone production build
+
+`npm run build` creates a deployable server in `.next/standalone` and copies the required static assets into it. Environment files and secrets are not copied into the artifact.
+
+Run the standalone server with runtime environment variables available:
+
+```bash
+HOSTNAME=0.0.0.0 npm run start
+```
+
+To deploy only the artifact, copy `.next/standalone` to the server and run `node server.js` from that directory. Configure the variables documented in `.env.example` through the hosting platform or process environment, and use HTTPS in production so secure authentication cookies work correctly.
