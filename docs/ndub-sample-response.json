@@ -1,0 +1,4824 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-27T09:43:35.584Z",
+  "source": "https://api-ems.ndub.edu.bd",
+  "parameters": {
+    "semesterId": 33,
+    "runningCourseId": 662
+  },
+  "security": {
+    "note": "Authentication and refresh-token responses are intentionally excluded."
+  },
+  "endpoints": {
+    "studentProfile": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/student-profile-details",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Success",
+        "data": {
+          "profileInfo": {
+            "studentRoll": "06926204081027",
+            "studentName": "BUSHRA ISLAM JOHA",
+            "studentCategory": "Civil",
+            "fatherName": "MD AMINUL ISLAM AMIN",
+            "motherName": "NADIRA AKTER NAZIM",
+            "mobileNumber": "8801794668616",
+            "email": "bushraislam925@gmail.com",
+            "scholarship": null,
+            "stipend": [],
+            "departmentId": 1,
+            "departmentCode": "BBA",
+            "departmentName": "Department of Business Administration",
+            "programNameShort": "BBA",
+            "programNameFull": "Bachelor of Business Administration",
+            "registrationNumber": "2631BB1002",
+            "studentTrack": "",
+            "level": 1,
+            "term": 1,
+            "termId": null,
+            "cgpa": null,
+            "earnedCredit": null,
+            "creditGroup": "Year-1, Sem-I",
+            "photoUrl": null,
+            "batchName": "BBA 31A",
+            "enrollmentBatchName": "BBA 31A",
+            "classSection": "BBA 31A",
+            "syllabusName": "BBA - 2025",
+            "syllabusDisplayName": "2025",
+            "syllabusYear": 2025,
+            "gender": "Female",
+            "dateOfBirth": "2008-01-11",
+            "quota": "General",
+            "academicSession": "2025-2026",
+            "status": "Active"
+          },
+          "advisorInfo": {
+            "advisorName": "Lecturer Shyama Folia",
+            "mobileNumber": "01705201535",
+            "userName": "01705201535",
+            "photoId": null,
+            "photoUrl": null
+          },
+          "creditSummary": {
+            "earnedCredits": null,
+            "incompleteCredits": null,
+            "totalCredits": 130
+          }
+        },
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "offeredCourses": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/fixed-credit/student-offered-courses",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Success",
+        "data": {
+          "offeredCourses": [
+            {
+              "courseId": 2169,
+              "courseCode": "0231-1101",
+              "courseTitle": "English I",
+              "courseType": "Theory",
+              "courseCategory": "Course",
+              "runningCourseCode": "0231-1101",
+              "termName": null,
+              "termId": 1,
+              "credit": 3,
+              "contactHour": 3,
+              "syllabusYear": 2025,
+              "syllabusDisplayName": "2025",
+              "registrationStatus": "Registered",
+              "registrationType": "Regular",
+              "registrationTypeShort": "R",
+              "sectionName": "BBA 31A"
+            },
+            {
+              "courseId": 2189,
+              "courseCode": "0310-1106",
+              "courseTitle": "Sociology",
+              "courseType": "Theory",
+              "courseCategory": "Course",
+              "runningCourseCode": "0310-1106",
+              "termName": null,
+              "termId": 1,
+              "credit": 3,
+              "contactHour": 3,
+              "syllabusYear": 2025,
+              "syllabusDisplayName": "2025",
+              "registrationStatus": "Registered",
+              "registrationType": "Regular",
+              "registrationTypeShort": "R",
+              "sectionName": "BBA 31A"
+            },
+            {
+              "courseId": 2167,
+              "courseCode": "0410-1102",
+              "courseTitle": "Introduction to Business",
+              "courseType": "Theory",
+              "courseCategory": "Course",
+              "runningCourseCode": "0410-1102",
+              "termName": null,
+              "termId": 1,
+              "credit": 3,
+              "contactHour": 3,
+              "syllabusYear": 2025,
+              "syllabusDisplayName": "2025",
+              "registrationStatus": "Registered",
+              "registrationType": "Regular",
+              "registrationTypeShort": "R",
+              "sectionName": "BBA 31A"
+            },
+            {
+              "courseId": 2170,
+              "courseCode": "0413-1103",
+              "courseTitle": "Principles of Management",
+              "courseType": "Theory",
+              "courseCategory": "Course",
+              "runningCourseCode": "0413-1103",
+              "termName": null,
+              "termId": 1,
+              "credit": 3,
+              "contactHour": 3,
+              "syllabusYear": 2025,
+              "syllabusDisplayName": "2025",
+              "registrationStatus": "Registered",
+              "registrationType": "Regular",
+              "registrationTypeShort": "R",
+              "sectionName": "BBA 31A"
+            },
+            {
+              "courseId": 2185,
+              "courseCode": "0611-1104",
+              "courseTitle": "Computer applications in Business",
+              "courseType": "Theory",
+              "courseCategory": "Course",
+              "runningCourseCode": "0611-1104",
+              "termName": null,
+              "termId": 1,
+              "credit": 3,
+              "contactHour": 3,
+              "syllabusYear": 2025,
+              "syllabusDisplayName": "2025",
+              "registrationStatus": "Registered",
+              "registrationType": "Regular",
+              "registrationTypeShort": "R",
+              "sectionName": "BBA 31A"
+            }
+          ]
+        },
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "semesters": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/fixed-credit/students-semester-list",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Success",
+        "data": [
+          {
+            "semesterId": 34,
+            "semesterName": "Summer 2026",
+            "semesterType": "Summer",
+            "value": 34,
+            "label": "Summer 2026",
+            "isSemesterEnd": false
+          },
+          {
+            "semesterId": 32,
+            "semesterName": "Spring 2026",
+            "semesterType": "Spring",
+            "value": 32,
+            "label": "Spring 2026",
+            "isSemesterEnd": true
+          },
+          {
+            "semesterId": 33,
+            "semesterName": "Fall 2026",
+            "semesterType": "Fall",
+            "value": 33,
+            "label": "Fall 2026",
+            "isSemesterEnd": false
+          }
+        ],
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "runningCourses": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/registered-course-list-by-running-semester?semesterId=33",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Data fetching successful",
+        "data": [
+          {
+            "runningCourseId": 662,
+            "courseId": 2169,
+            "courseCode": "0231-1101",
+            "courseTitle": "English I",
+            "runningCourseCode": "0231-1101",
+            "syllabusTitle": "BBA - 2025",
+            "syllabusYear": 2025,
+            "syllabusDisplayName": "2025",
+            "courseSection": "BBA 31A",
+            "credit": 3,
+            "contactHour": 3,
+            "courseType": "Theory",
+            "registrationType": "Regular",
+            "sectionName": "BBA 31A",
+            "courseTeachers": [
+              {
+                "userId": 25,
+                "username": "01712632974",
+                "facultyName": "Lecturer Md. Waliullah",
+                "facultyShortName": null,
+                "rank": "Lecturer",
+                "phoneNumber": "01712632974",
+                "photoUrl": null,
+                "departmentId": 3,
+                "departmentName": "Department of English",
+                "departmentCode": "ENG",
+                "isDepartmentalFaculty": null
+              }
+            ]
+          },
+          {
+            "runningCourseId": 661,
+            "courseId": 2189,
+            "courseCode": "0310-1106",
+            "courseTitle": "Sociology",
+            "runningCourseCode": "0310-1106",
+            "syllabusTitle": "BBA - 2025",
+            "syllabusYear": 2025,
+            "syllabusDisplayName": "2025",
+            "courseSection": "BBA 31A",
+            "credit": 3,
+            "contactHour": 3,
+            "courseType": "Theory",
+            "registrationType": "Regular",
+            "sectionName": "BBA 31A",
+            "courseTeachers": [
+              {
+                "userId": 16,
+                "username": "01534783579",
+                "facultyName": "Lecturer Sristy Flora Pereira",
+                "facultyShortName": null,
+                "rank": "Lecturer",
+                "phoneNumber": "01534783579",
+                "photoUrl": null,
+                "departmentId": 1,
+                "departmentName": "Department of Business Administration",
+                "departmentCode": "BBA",
+                "isDepartmentalFaculty": null
+              }
+            ]
+          },
+          {
+            "runningCourseId": 660,
+            "courseId": 2167,
+            "courseCode": "0410-1102",
+            "courseTitle": "Introduction to Business",
+            "runningCourseCode": "0410-1102",
+            "syllabusTitle": "BBA - 2025",
+            "syllabusYear": 2025,
+            "syllabusDisplayName": "2025",
+            "courseSection": "BBA 31A",
+            "credit": 3,
+            "contactHour": 3,
+            "courseType": "Theory",
+            "registrationType": "Regular",
+            "sectionName": "BBA 31A",
+            "courseTeachers": [
+              {
+                "userId": 15,
+                "username": "01746240648",
+                "facultyName": "Lecturer Bridgita Biswas",
+                "facultyShortName": null,
+                "rank": "Lecturer",
+                "phoneNumber": "01746240648",
+                "photoUrl": "https://api-ems.ndub.edu.bd/files/view/3e9c8382-5378-4b61-ad14-e438d457cef9/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzZTljODM4Mi01Mzc4LTRiNjEtYWQxNC1lNDM4ZDQ1N2NlZjkiLCJleHAiOjE3OTMwOTQzMDQsImlhdCI6MTc5MzA5NDIxNH0.002t9NYzi1sv_4UAK7J00LK4q4AgZ28OIEhdnZtIV5g",
+                "departmentId": 1,
+                "departmentName": "Department of Business Administration",
+                "departmentCode": "BBA",
+                "isDepartmentalFaculty": null
+              }
+            ]
+          },
+          {
+            "runningCourseId": 659,
+            "courseId": 2170,
+            "courseCode": "0413-1103",
+            "courseTitle": "Principles of Management",
+            "runningCourseCode": "0413-1103",
+            "syllabusTitle": "BBA - 2025",
+            "syllabusYear": 2025,
+            "syllabusDisplayName": "2025",
+            "courseSection": "BBA 31A",
+            "credit": 3,
+            "contactHour": 3,
+            "courseType": "Theory",
+            "registrationType": "Regular",
+            "sectionName": "BBA 31A",
+            "courseTeachers": [
+              {
+                "userId": 10,
+                "username": "01911051342",
+                "facultyName": "Associate Professor Dr. Vhokto Kumar Biswas",
+                "facultyShortName": null,
+                "rank": "Associate Professor",
+                "phoneNumber": "01911051342",
+                "photoUrl": null,
+                "departmentId": 1,
+                "departmentName": "Department of Business Administration",
+                "departmentCode": "BBA",
+                "isDepartmentalFaculty": null
+              }
+            ]
+          },
+          {
+            "runningCourseId": 655,
+            "courseId": 2185,
+            "courseCode": "0611-1104",
+            "courseTitle": "Computer applications in Business",
+            "runningCourseCode": "0611-1104",
+            "syllabusTitle": "BBA - 2025",
+            "syllabusYear": 2025,
+            "syllabusDisplayName": "2025",
+            "courseSection": "BBA 31A",
+            "credit": 3,
+            "contactHour": 3,
+            "courseType": "Theory",
+            "registrationType": "Regular",
+            "sectionName": "BBA 31A",
+            "courseTeachers": [
+              {
+                "userId": 211,
+                "username": "01680013260",
+                "facultyName": "Lecturer Muhammad Makama Mahmudur Rahman Ohee",
+                "facultyShortName": "Ohee",
+                "rank": "Lecturer",
+                "phoneNumber": "01680013260",
+                "photoUrl": null,
+                "departmentId": 2,
+                "departmentName": "Department of Computer Science and Engineering",
+                "departmentCode": "CSE",
+                "isDepartmentalFaculty": null
+              }
+            ]
+          }
+        ],
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "courseDetails": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/course-details-by-running-course-id?runningCourseId=662",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Data fetching successful",
+        "data": {
+          "runningCourseId": 662,
+          "courseId": 2169,
+          "courseCode": "0231-1101",
+          "runningCourseCode": "0231-1101",
+          "courseTitle": "English I",
+          "syllabusTitle": "BBA - 2025",
+          "syllabusYear": 2025,
+          "syllabusDisplayName": "2025",
+          "sectionName": "BBA 31A",
+          "credit": 3,
+          "contactHour": 3,
+          "courseType": "Theory",
+          "registrationType": "Regular",
+          "registrationStatus": "Registered",
+          "courseTeachers": [
+            {
+              "userId": 25,
+              "username": "01712632974",
+              "facultyName": "Lecturer Md. Waliullah",
+              "facultyShortName": null,
+              "rank": "Lecturer",
+              "phoneNumber": "01712632974",
+              "photoUrl": null,
+              "departmentId": 3,
+              "departmentName": "Department of English",
+              "departmentCode": "ENG",
+              "isDepartmentalFaculty": null
+            }
+          ]
+        },
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "attendanceSummary": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/attendance-summary-by-semester?semesterId=33",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Data fetching successful.",
+        "data": {
+          "studentRoll": "06926204081027",
+          "studentName": "BUSHRA ISLAM JOHA",
+          "creditGroup": "Year-1, Sem-I",
+          "studentCategory": "Civil",
+          "mobileNumber": "8801794668616",
+          "email": "bushraislam925@gmail.com",
+          "programNameShort": null,
+          "programNameFull": null,
+          "departmentCode": "BBA",
+          "departmentId": 1,
+          "departmentName": "Department of Business Administration",
+          "syllabusName": "BBA - 2025",
+          "syllabusYear": 2025,
+          "semesterId": 33,
+          "semesterName": "Fall 2026",
+          "attendanceSummary": [
+            {
+              "runningCourseId": 662,
+              "examId": 9,
+              "examName": "Term Final Fall 2026 Undergraduate",
+              "courseCode": "0231-1101",
+              "runningCourseCode": "0231-1101",
+              "courseTitle": "English I",
+              "courseType": "Theory",
+              "registrationType": "Regular",
+              "section": "BBA 31A",
+              "credit": 3,
+              "contactHour": 3,
+              "presentCount": 14,
+              "absentCount": 7,
+              "totalClass": 21,
+              "percentage": 66.67
+            },
+            {
+              "runningCourseId": 661,
+              "examId": 9,
+              "examName": "Term Final Fall 2026 Undergraduate",
+              "courseCode": "0310-1106",
+              "runningCourseCode": "0310-1106",
+              "courseTitle": "Sociology",
+              "courseType": "Theory",
+              "registrationType": "Regular",
+              "section": "BBA 31A",
+              "credit": 3,
+              "contactHour": 3,
+              "presentCount": 14,
+              "absentCount": 8,
+              "totalClass": 22,
+              "percentage": 63.64
+            },
+            {
+              "runningCourseId": 660,
+              "examId": 9,
+              "examName": "Term Final Fall 2026 Undergraduate",
+              "courseCode": "0410-1102",
+              "runningCourseCode": "0410-1102",
+              "courseTitle": "Introduction to Business",
+              "courseType": "Theory",
+              "registrationType": "Regular",
+              "section": "BBA 31A",
+              "credit": 3,
+              "contactHour": 3,
+              "presentCount": 15,
+              "absentCount": 7,
+              "totalClass": 22,
+              "percentage": 68.18
+            },
+            {
+              "runningCourseId": 659,
+              "examId": 9,
+              "examName": "Term Final Fall 2026 Undergraduate",
+              "courseCode": "0413-1103",
+              "runningCourseCode": "0413-1103",
+              "courseTitle": "Principles of Management",
+              "courseType": "Theory",
+              "registrationType": "Regular",
+              "section": "BBA 31A",
+              "credit": 3,
+              "contactHour": 3,
+              "presentCount": 18,
+              "absentCount": 4,
+              "totalClass": 22,
+              "percentage": 81.82
+            },
+            {
+              "runningCourseId": 655,
+              "examId": 9,
+              "examName": "Term Final Fall 2026 Undergraduate",
+              "courseCode": "0611-1104",
+              "runningCourseCode": "0611-1104",
+              "courseTitle": "Computer applications in Business",
+              "courseType": "Theory",
+              "registrationType": "Regular",
+              "section": "BBA 31A",
+              "credit": 3,
+              "contactHour": 3,
+              "presentCount": 15,
+              "absentCount": 9,
+              "totalClass": 24,
+              "percentage": 62.5
+            }
+          ]
+        },
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "classAttendance": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/class-attendance-by-running-course-id?runningCourseId=662",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Class attendanc data fetching successful.",
+        "data": {
+          "totalClass": 21,
+          "totalPresent": 14,
+          "presentPercentage": 66.67,
+          "records": [
+            {
+              "classType": "Regular",
+              "classDate": "2026-07-28",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-02",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-04",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-09",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-11",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-16",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-18",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-23",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-25",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-08-30",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-09-01",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-09-15",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-09-22",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-09-27",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-09-29",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-10-04",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-10-06",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-10-11",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-10-13",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Absent",
+              "presentStatusShort": "A",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-10-25",
+              "classDay": "Sunday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "10:50:00-12:10:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            },
+            {
+              "classType": "Regular",
+              "classDate": "2026-10-27",
+              "classDay": "Tuesday",
+              "classStatus": "Completed",
+              "sectionName": "BBA 31A",
+              "timeSlot": "15:15:00-16:35:00",
+              "presentStatus": "Present",
+              "presentStatusShort": "P",
+              "blockingReason": "",
+              "isExempt": false,
+              "exemptReason": "",
+              "isAttendanceSubmitted": true,
+              "studentRemarks": "",
+              "overallRemarks": ""
+            }
+          ]
+        },
+        "errors": null,
+        "debugHint": null
+      }
+    },
+    "programRoutine": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/program-routine?semesterId=33",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Success",
+        "data": [
+          {
+            "periodId": 18,
+            "roomId": 17,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 895,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 639,
+                "courseCode": "0311-1206",
+                "facultyMemberUserId": 17,
+                "facultyMemberName": "Mahmuda Akter",
+                "routineId": 1634,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 891,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 638,
+                "courseCode": "0413-3104",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 966,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 20,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 861,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 620,
+                "courseCode": "0412-4104",
+                "facultyMemberUserId": 184,
+                "facultyMemberName": "Dr. Md. Bayezid Ali (Adjunct)",
+                "routineId": 1646,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 21,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 883,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 635,
+                "courseCode": "0411-3101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 968,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 883,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 635,
+                "courseCode": "0411-3101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1269,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 22,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 909,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 645,
+                "courseCode": "0500-2101",
+                "facultyMemberUserId": 221,
+                "facultyMemberName": "Sugandha Paul",
+                "routineId": 1270,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 23,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 876,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 632,
+                "courseCode": "0412-3206",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1271,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 24,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 882,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 635,
+                "courseCode": "0411-3101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1512,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 864,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 623,
+                "courseCode": "0411-4202",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1649,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 27,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 858,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 617,
+                "courseCode": "0412-4101",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1382,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 3,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 854,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 613,
+                "courseCode": "0412-4202",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1386,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 854,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 613,
+                "courseCode": "0412-4202",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1081,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 25B",
+                "sectionId": 1022,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 697,
+                "courseCode": "0413-4105",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1584,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 869,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 628,
+                "courseCode": "0411-4104",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1198,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 1113,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 713,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": null,
+                "facultyMemberName": null,
+                "routineId": 1642,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 923,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 650,
+                "courseCode": "0541-2103",
+                "facultyMemberUserId": 220,
+                "facultyMemberName": "Rana Pervez",
+                "routineId": 1510,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 934,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 186,
+                "facultyMemberName": "Md. Mahathy Hasan Jewel (Adjunct)",
+                "routineId": 1082,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 915,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 648,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 974,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 934,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 186,
+                "facultyMemberName": "Md. Mahathy Hasan Jewel (Adjunct)",
+                "routineId": 1199,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 921,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 649,
+                "courseCode": "0400-2106",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1091,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 932,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1083,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Thursday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 867,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 626,
+                "courseCode": "0411-4101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1511,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 944,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1616,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 853,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 612,
+                "courseCode": "0414-4104",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1200,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 863,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 622,
+                "courseCode": "0411-4204",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1092,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 869,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 628,
+                "courseCode": "0411-4104",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1084,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 853,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 612,
+                "courseCode": "0414-4104",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1085,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 882,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 635,
+                "courseCode": "0411-3101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1086,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 932,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1586,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 13,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 884,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 635,
+                "courseCode": "0411-3101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1702,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 19,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Wednesday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 861,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 620,
+                "courseCode": "0412-4104",
+                "facultyMemberUserId": 184,
+                "facultyMemberName": "Dr. Md. Bayezid Ali (Adjunct)",
+                "routineId": 1601,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 939,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 846,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 1113,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 713,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1643,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 957,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1100,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 930,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1283,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 892,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 638,
+                "courseCode": "0413-3104",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 849,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 898,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 640,
+                "courseCode": "0421-3105",
+                "facultyMemberUserId": 182,
+                "facultyMemberName": "Mahasina Akter Banna",
+                "routineId": 1628,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 937,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 654,
+                "courseCode": "0031-1202",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 863,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 948,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 657,
+                "courseCode": "0414-1205",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1284,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 906,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 644,
+                "courseCode": "0311-2202",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 850,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 929,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 62,
+                "facultyMemberName": "Sanjida Haider Suha",
+                "routineId": 1101,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 948,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 657,
+                "courseCode": "0414-1205",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 864,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 959,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1527,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 925,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 651,
+                "courseCode": "0311-2104",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 865,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 13,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 881,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 634,
+                "courseCode": "0413-2204",
+                "facultyMemberUserId": 192,
+                "facultyMemberName": "Mostafiz Ahammed (Adjunct)",
+                "routineId": 1285,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 931,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 868,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 14,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 890,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 637,
+                "courseCode": "0313-2205",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 869,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Saturday": {
+                "sectionName": "BBA 30D",
+                "sectionId": 1127,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 218,
+                "facultyMemberName": "Mr. Md. Adnan Ahmed",
+                "routineId": 1667,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 12,
+            "roomId": 17,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 935,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 218,
+                "facultyMemberName": "Mr. Md. Adnan Ahmed",
+                "routineId": 1655,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 959,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1528,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 3,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 907,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 644,
+                "courseCode": "0311-2202",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 1293,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 936,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 654,
+                "courseCode": "0031-1202",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 1294,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 936,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 654,
+                "courseCode": "0031-1202",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 983,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 890,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 637,
+                "courseCode": "0313-2205",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1652,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 922,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 650,
+                "courseCode": "0541-2103",
+                "facultyMemberUserId": 220,
+                "facultyMemberName": "Rana Pervez",
+                "routineId": 880,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 877,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 632,
+                "courseCode": "0412-3206",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1114,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 6,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 862,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 621,
+                "courseCode": "0411-4201",
+                "facultyMemberUserId": 217,
+                "facultyMemberName": "Prof. Dr. Abdul Hannan Mia",
+                "routineId": 1612,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 937,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 654,
+                "courseCode": "0031-1202",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 1295,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 957,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 984,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 960,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 661,
+                "courseCode": "0310-1106",
+                "facultyMemberUserId": 16,
+                "facultyMemberName": "Sristy Flora Pereira",
+                "routineId": 882,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 892,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 638,
+                "courseCode": "0413-3104",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 1115,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 967,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1210,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 904,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1296,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 964,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 662,
+                "courseCode": "0231-1101",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 985,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 951,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 658,
+                "courseCode": "0231-1201",
+                "facultyMemberUserId": 30,
+                "facultyMemberName": "Dr. Sr. Jarina Henrieta Gomes, SMRA",
+                "routineId": 883,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 964,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 662,
+                "courseCode": "0231-1101",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 1116,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 951,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 658,
+                "courseCode": "0231-1201",
+                "facultyMemberUserId": 30,
+                "facultyMemberName": "Dr. Sr. Jarina Henrieta Gomes, SMRA",
+                "routineId": 1211,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 965,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 662,
+                "courseCode": "0231-1101",
+                "facultyMemberUserId": 33,
+                "facultyMemberName": "Nazia Forhin Shifat",
+                "routineId": 1518,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 10,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 870,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 629,
+                "courseCode": "0413-3103",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 1604,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 13,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 962,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 661,
+                "courseCode": "0310-1106",
+                "facultyMemberUserId": 16,
+                "facultyMemberName": "Sristy Flora Pereira",
+                "routineId": 1526,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 899,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 640,
+                "courseCode": "0421-3105",
+                "facultyMemberUserId": 182,
+                "facultyMemberName": "Mahasina Akter Banna",
+                "routineId": 1595,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 876,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 632,
+                "courseCode": "0412-3206",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1600,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 14,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 907,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 644,
+                "courseCode": "0311-2202",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 886,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 15,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 857,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 616,
+                "courseCode": "0412-4204",
+                "facultyMemberUserId": 213,
+                "facultyMemberName": "Imran Mahmuud",
+                "routineId": 1530,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 875,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 631,
+                "courseCode": "0410-3106",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 1300,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 871,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 629,
+                "courseCode": "0413-3103",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 887,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 884,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 635,
+                "courseCode": "0411-3101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1121,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Saturday": {
+                "sectionName": "BBA 30D",
+                "sectionId": 1127,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 218,
+                "facultyMemberName": "Mr. Md. Adnan Ahmed",
+                "routineId": 1668,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 17,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 880,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 634,
+                "courseCode": "0413-2204",
+                "facultyMemberUserId": 192,
+                "facultyMemberName": "Mostafiz Ahammed (Adjunct)",
+                "routineId": 1301,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 928,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 62,
+                "facultyMemberName": "Sanjida Haider Suha",
+                "routineId": 1122,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 18,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 919,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 649,
+                "courseCode": "0400-2106",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1213,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 19,
+            "roomName": null,
+            "days": {
+              "Wednesday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 849,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 608,
+                "courseCode": "0414-4204",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1128,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 13,
+            "roomId": 22,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 857,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 616,
+                "courseCode": "0412-4204",
+                "facultyMemberUserId": 213,
+                "facultyMemberName": "Imran Mahmuud",
+                "routineId": 1539,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 3,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 921,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 649,
+                "courseCode": "0400-2106",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1311,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 954,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1000,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 944,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1519,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 942,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1312,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 954,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1135,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 956,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1520,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 963,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 662,
+                "courseCode": "0231-1101",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 899,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 6,
+            "roomName": null,
+            "days": {
+              "Wednesday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 848,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 607,
+                "courseCode": "0414-4203",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1146,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 946,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 656,
+                "courseCode": "0411-1203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1313,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 889,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 637,
+                "courseCode": "0313-2205",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1002,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 935,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 218,
+                "facultyMemberName": "Mr. Md. Adnan Ahmed",
+                "routineId": 900,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 874,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 631,
+                "courseCode": "0410-3106",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 1136,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 904,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1003,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 919,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 649,
+                "courseCode": "0400-2106",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1395,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 952,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 658,
+                "courseCode": "0231-1201",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 1224,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 914,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 648,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1315,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 939,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1137,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 14,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 870,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 629,
+                "courseCode": "0413-3103",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 1317,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 871,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 629,
+                "courseCode": "0413-3103",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 1006,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 878,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 633,
+                "courseCode": "0414-3201",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1605,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 887,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 636,
+                "courseCode": "0413-3102",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1225,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 873,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 630,
+                "courseCode": "0411-3205",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1319,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 881,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 634,
+                "courseCode": "0413-2204",
+                "facultyMemberUserId": 192,
+                "facultyMemberName": "Mostafiz Ahammed (Adjunct)",
+                "routineId": 1140,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 938,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 654,
+                "courseCode": "0031-1202",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 1227,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 17,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 928,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 62,
+                "facultyMemberName": "Sanjida Haider Suha",
+                "routineId": 905,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 908,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 645,
+                "courseCode": "0500-2101",
+                "facultyMemberUserId": 70,
+                "facultyMemberName": "Farjana Afroj",
+                "routineId": 1141,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 926,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 651,
+                "courseCode": "0311-2104",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 1228,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Saturday": {
+                "sectionName": "BBA 31D",
+                "sectionId": 1129,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 213,
+                "facultyMemberName": "Imran Mahmuud",
+                "routineId": 1669,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 19,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 847,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 606,
+                "courseCode": "0414 4202",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1498,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 847,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 606,
+                "courseCode": "0414 4202",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1497,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 849,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 608,
+                "courseCode": "0414-4204",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1233,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 21,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 1114,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 713,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1645,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 1114,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 713,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1644,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 22,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 877,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 632,
+                "courseCode": "0412-3206",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 908,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 14,
+            "roomId": 23,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 874,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 631,
+                "courseCode": "0410-3106",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 1009,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 897,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 640,
+                "courseCode": "0421-3105",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1144,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 897,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 640,
+                "courseCode": "0421-3105",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1229,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 3,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 923,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 650,
+                "courseCode": "0541-2103",
+                "facultyMemberUserId": 220,
+                "facultyMemberName": "Rana Pervez",
+                "routineId": 1020,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 899,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 640,
+                "courseCode": "0421-3105",
+                "facultyMemberUserId": 182,
+                "facultyMemberName": "Mahasina Akter Banna",
+                "routineId": 1329,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 940,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 183,
+                "facultyMemberName": "Poly Rani Ghosh",
+                "routineId": 1021,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 920,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 649,
+                "courseCode": "0400-2106",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1153,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 945,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 656,
+                "courseCode": "0411-1203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 918,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 952,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 658,
+                "courseCode": "0231-1201",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 919,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 922,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 650,
+                "courseCode": "0541-2103",
+                "facultyMemberUserId": 220,
+                "facultyMemberName": "Rana Pervez",
+                "routineId": 1155,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 955,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1331,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 955,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1023,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 914,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 648,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 920,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 943,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1156,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 945,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 656,
+                "courseCode": "0411-1203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1332,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 933,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1024,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 927,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 651,
+                "courseCode": "0311-2104",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 921,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 10,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 863,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 622,
+                "courseCode": "0411-4204",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1343,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 866,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 625,
+                "courseCode": "0411-4102",
+                "facultyMemberUserId": 217,
+                "facultyMemberName": "Prof. Dr. Abdul Hannan Mia",
+                "routineId": 1035,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 12,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 851,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 610,
+                "courseCode": "0414-4102",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1036,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 855,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 614,
+                "courseCode": "0412-4201",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 931,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 851,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 610,
+                "courseCode": "0414-4102",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1167,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 13,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 950,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 657,
+                "courseCode": "0414-1205",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1333,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 14,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 925,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 651,
+                "courseCode": "0311-2104",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 1334,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 931,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1336,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 887,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 636,
+                "courseCode": "0413-3102",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1160,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 17,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 924,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 650,
+                "courseCode": "0541-2103",
+                "facultyMemberUserId": 220,
+                "facultyMemberName": "Rana Pervez",
+                "routineId": 1337,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 906,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 644,
+                "courseCode": "0311-2202",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 1161,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Saturday": {
+                "sectionName": "BBA 31D",
+                "sectionId": 1129,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 213,
+                "facultyMemberName": "Imran Mahmuud",
+                "routineId": 1670,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 18,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 894,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 639,
+                "courseCode": "0311-1206",
+                "facultyMemberUserId": 17,
+                "facultyMemberName": "Mahmuda Akter",
+                "routineId": 1598,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 903,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 642,
+                "courseCode": "0411-2203",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 1162,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 19,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 848,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 607,
+                "courseCode": "0414-4203",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1037,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 846,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 605,
+                "courseCode": "0414-4201",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 932,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 20,
+            "roomName": null,
+            "days": {
+              "Wednesday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 859,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 618,
+                "courseCode": "0412-4102",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1168,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 21,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 889,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 637,
+                "courseCode": "0313-2205",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1339,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 873,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 630,
+                "courseCode": "0411-3205",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1028,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 872,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 630,
+                "courseCode": "0411-3205",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1599,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 880,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 634,
+                "courseCode": "0413-2204",
+                "facultyMemberUserId": 192,
+                "facultyMemberName": "Mostafiz Ahammed (Adjunct)",
+                "routineId": 1163,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 895,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 639,
+                "courseCode": "0311-1206",
+                "facultyMemberUserId": 17,
+                "facultyMemberName": "Mahmuda Akter",
+                "routineId": 1633,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 22,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 903,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 642,
+                "courseCode": "0411-2203",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 1340,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 898,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 640,
+                "courseCode": "0421-3105",
+                "facultyMemberUserId": 182,
+                "facultyMemberName": "Mahasina Akter Banna",
+                "routineId": 927,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 23,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 956,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 659,
+                "courseCode": "0413-1103",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1525,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 879,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 633,
+                "courseCode": "0414-3201",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 928,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 16,
+            "roomId": 27,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 859,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 618,
+                "courseCode": "0412-4102",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1039,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 865,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 624,
+                "courseCode": "0411-4203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1169,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 3,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 902,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 642,
+                "courseCode": "0411-2203",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 939,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 960,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 661,
+                "courseCode": "0310-1106",
+                "facultyMemberUserId": 16,
+                "facultyMemberName": "Sristy Flora Pereira",
+                "routineId": 1350,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 968,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 940,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Wednesday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 927,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 651,
+                "courseCode": "0311-2104",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 1172,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 6,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 862,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 621,
+                "courseCode": "0411-4201",
+                "facultyMemberUserId": 217,
+                "facultyMemberName": "Prof. Dr. Abdul Hannan Mia",
+                "routineId": 1361,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 953,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 658,
+                "courseCode": "0231-1201",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 1046,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 961,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 661,
+                "courseCode": "0310-1106",
+                "facultyMemberUserId": 16,
+                "facultyMemberName": "Sristy Flora Pereira",
+                "routineId": 941,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 940,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 183,
+                "facultyMemberName": "Poly Rani Ghosh",
+                "routineId": 1173,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 942,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1241,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 893,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 638,
+                "courseCode": "0413-3104",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1351,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 966,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1047,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 938,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 654,
+                "courseCode": "0031-1202",
+                "facultyMemberUserId": 8,
+                "facultyMemberName": "Nazma Akhter",
+                "routineId": 942,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30A",
+                "sectionId": 933,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 653,
+                "courseCode": "0542-2102",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1174,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 961,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 661,
+                "courseCode": "0310-1106",
+                "facultyMemberUserId": 16,
+                "facultyMemberName": "Sristy Flora Pereira",
+                "routineId": 1242,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 950,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 657,
+                "courseCode": "0414-1205",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1243,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 10,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 864,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 623,
+                "courseCode": "0411-4202",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1409,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Thursday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 868,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 627,
+                "courseCode": "0411-4103",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1362,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 868,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 627,
+                "courseCode": "0411-4103",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 950,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 856,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 615,
+                "courseCode": "0412-4203",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1254,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 12,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 852,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 611,
+                "courseCode": "0414-4103",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1363,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 855,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 614,
+                "courseCode": "0412-4201",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 1058,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 852,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 611,
+                "courseCode": "0414-4103",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 951,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 13,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 920,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 649,
+                "courseCode": "0400-2106",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1049,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Saturday": {
+                "sectionName": "BBA 31D",
+                "sectionId": 1126,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1696,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 14,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 924,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 650,
+                "courseCode": "0541-2103",
+                "facultyMemberUserId": 220,
+                "facultyMemberName": "Rana Pervez",
+                "routineId": 1050,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 875,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 631,
+                "courseCode": "0410-3106",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 1176,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 878,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 633,
+                "courseCode": "0414-3201",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1245,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 888,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 637,
+                "courseCode": "0313-2205",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1356,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 888,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 637,
+                "courseCode": "0313-2205",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1052,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 896,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 639,
+                "courseCode": "0311-1206",
+                "facultyMemberUserId": 17,
+                "facultyMemberName": "Mahmuda Akter",
+                "routineId": 1703,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 953,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 658,
+                "courseCode": "0231-1201",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 1177,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 885,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 636,
+                "courseCode": "0413-3102",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1247,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 17,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 905,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 187,
+                "facultyMemberName": "Md. Al Amin (Adjunct)",
+                "routineId": 1357,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 929,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 62,
+                "facultyMemberName": "Sanjida Haider Suha",
+                "routineId": 1053,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 25B",
+                "sectionId": 1022,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 697,
+                "courseCode": "0413-4105",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1583,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 902,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 642,
+                "courseCode": "0411-2203",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 1248,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 18,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 860,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 619,
+                "courseCode": "0412-4103",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 1358,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 19,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 858,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 617,
+                "courseCode": "0412-4101",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1647,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 24: MKT",
+                "sectionId": 846,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 605,
+                "courseCode": "0414-4201",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1255,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 20,
+            "roomName": null,
+            "days": {
+              "Sunday": {
+                "sectionName": "BBA 25: FIN",
+                "sectionId": 860,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 619,
+                "courseCode": "0412-4103",
+                "facultyMemberUserId": 11,
+                "facultyMemberName": "Dr. Sultana Shahida Abedin",
+                "routineId": 953,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 21,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 886,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 636,
+                "courseCode": "0413-3102",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1359,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 885,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 636,
+                "courseCode": "0413-3102",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1178,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27B",
+                "sectionId": 886,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 636,
+                "courseCode": "0413-3102",
+                "facultyMemberUserId": 10,
+                "facultyMemberName": "Dr. Vhokto Kumar Biswas",
+                "routineId": 1250,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 22,
+            "roomName": null,
+            "days": {
+              "Wednesday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 893,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 638,
+                "courseCode": "0413-3104",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1179,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 905,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 187,
+                "facultyMemberName": "Md. Al Amin (Adjunct)",
+                "routineId": 1251,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 23,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 27C",
+                "sectionId": 896,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 639,
+                "courseCode": "0311-1206",
+                "facultyMemberUserId": 17,
+                "facultyMemberName": "Mahmuda Akter",
+                "routineId": 1631,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 26A",
+                "sectionId": 872,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 630,
+                "courseCode": "0411-3205",
+                "facultyMemberUserId": 9,
+                "facultyMemberName": "Aziza Akhter",
+                "routineId": 1180,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 24,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 962,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 661,
+                "courseCode": "0310-1106",
+                "facultyMemberUserId": 16,
+                "facultyMemberName": "Sristy Flora Pereira",
+                "routineId": 1517,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 17,
+            "roomId": 27,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 24: FIN",
+                "sectionId": 856,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 615,
+                "courseCode": "0412-4203",
+                "facultyMemberUserId": 14,
+                "facultyMemberName": "Israt Jahan Piya",
+                "routineId": 1364,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 3,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 916,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 648,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1064,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 31C",
+                "sectionId": 965,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 662,
+                "courseCode": "0231-1101",
+                "facultyMemberUserId": 33,
+                "facultyMemberName": "Nazia Forhin Shifat",
+                "routineId": 1615,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 915,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 648,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1188,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 4,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 930,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 652,
+                "courseCode": "0421-2206",
+                "facultyMemberUserId": 63,
+                "facultyMemberName": "Richita Akter",
+                "routineId": 1065,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 28A",
+                "sectionId": 908,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 645,
+                "courseCode": "0500-2101",
+                "facultyMemberUserId": 70,
+                "facultyMemberName": "Farjana Afroj",
+                "routineId": 958,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 29A",
+                "sectionId": 966,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1189,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 5,
+            "roomName": null,
+            "days": {
+              "Tuesday": {
+                "sectionName": "BBA 24: ACT",
+                "sectionId": 865,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 624,
+                "courseCode": "0411-4203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1648,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 7,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 947,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 656,
+                "courseCode": "0411-1203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1067,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Thursday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 926,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 651,
+                "courseCode": "0311-2104",
+                "facultyMemberUserId": 181,
+                "facultyMemberName": "Prokrity Noureen Kashem",
+                "routineId": 1509,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 958,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 960,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 947,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 656,
+                "courseCode": "0411-1203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 1191,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 31A",
+                "sectionId": 963,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 662,
+                "courseCode": "0231-1101",
+                "facultyMemberUserId": 25,
+                "facultyMemberName": "Md. Waliullah",
+                "routineId": 1261,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 8,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 943,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 211,
+                "facultyMemberName": "Muhammad Makama Mahmudur Rahman Ohee",
+                "routineId": 1372,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 949,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 657,
+                "courseCode": "0414-1205",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1068,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 946,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 656,
+                "courseCode": "0411-1203",
+                "facultyMemberUserId": 20,
+                "facultyMemberName": "Md. Shamim Al Mamun",
+                "routineId": 961,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 30B",
+                "sectionId": 949,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 657,
+                "courseCode": "0414-1205",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1192,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 31B",
+                "sectionId": 958,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 15,
+                "facultyMemberName": "Bridgita Biswas",
+                "routineId": 1262,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 9,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 894,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 639,
+                "courseCode": "0311-1206",
+                "facultyMemberUserId": 17,
+                "facultyMemberName": "Mahmuda Akter",
+                "routineId": 1632,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 10,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 850,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 609,
+                "courseCode": "0414-4101",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1380,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 25: MKT",
+                "sectionId": 850,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 609,
+                "courseCode": "0414-4101",
+                "facultyMemberUserId": 7,
+                "facultyMemberName": "Afrista Birjis",
+                "routineId": 1077,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 12,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 866,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 625,
+                "courseCode": "0411-4102",
+                "facultyMemberUserId": 217,
+                "facultyMemberName": "Prof. Dr. Abdul Hannan Mia",
+                "routineId": 1568,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Monday": {
+                "sectionName": "BBA 25: ACT",
+                "sectionId": 867,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 626,
+                "courseCode": "0411-4101",
+                "facultyMemberUserId": 3,
+                "facultyMemberName": "Dr. Md. Abdul Hakim",
+                "routineId": 1078,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 13,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 28B",
+                "sectionId": 909,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 645,
+                "courseCode": "0500-2101",
+                "facultyMemberUserId": 221,
+                "facultyMemberName": "Sugandha Paul",
+                "routineId": 1070,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 941,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 208,
+                "facultyMemberName": "Smita Moni Roy Suchi",
+                "routineId": 963,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 30C",
+                "sectionId": 941,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 655,
+                "courseCode": "0611-1104",
+                "facultyMemberUserId": 208,
+                "facultyMemberName": "Smita Moni Roy Suchi",
+                "routineId": 1264,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Saturday": {
+                "sectionName": "BBA 31D",
+                "sectionId": 1126,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 660,
+                "courseCode": "0410-1102",
+                "facultyMemberUserId": 18,
+                "facultyMemberName": "Shyama Folia",
+                "routineId": 1697,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 14,
+            "roomName": null,
+            "days": {
+              "Monday": {
+                "sectionName": "BBA 26B",
+                "sectionId": 879,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 633,
+                "courseCode": "0414-3201",
+                "facultyMemberUserId": 13,
+                "facultyMemberName": "Deeba Mondal",
+                "routineId": 1071,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 29B",
+                "sectionId": 967,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 964,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 916,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 648,
+                "courseCode": "0542-2201",
+                "facultyMemberUserId": 5,
+                "facultyMemberName": "Tazia Hossain",
+                "routineId": 1265,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          },
+          {
+            "periodId": 18,
+            "roomId": 16,
+            "roomName": null,
+            "days": {
+              "Thursday": {
+                "sectionName": "BBA 29C",
+                "sectionId": 968,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 643,
+                "courseCode": "0412-2105",
+                "facultyMemberUserId": 4,
+                "facultyMemberName": "Ranet John Paul Gomes",
+                "routineId": 1375,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Sunday": {
+                "sectionName": "BBA 25A",
+                "sectionId": 1021,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 697,
+                "courseCode": "0413-4105",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1581,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Wednesday": {
+                "sectionName": "BBA 25A",
+                "sectionId": 1021,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 697,
+                "courseCode": "0413-4105",
+                "facultyMemberUserId": 179,
+                "facultyMemberName": "Tanzia Rahman",
+                "routineId": 1582,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              },
+              "Tuesday": {
+                "sectionName": "BBA 27A",
+                "sectionId": 891,
+                "programId": 1,
+                "programColorCode": "#8BC34A",
+                "runningCourseId": 638,
+                "courseCode": "0413-3104",
+                "facultyMemberUserId": 12,
+                "facultyMemberName": "Dr. Nandita Mallik",
+                "routineId": 1267,
+                "isNonAdminRCConfAllowed": false,
+                "clubActivity": false
+              }
+            }
+          }
+        ],
+        "errors": null,
+        "debugHint": null
+      }
+    }
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "info": {
+    "_postman_id": "540bf176-a9cc-4f03-a6b8-b4ee43aaff42",
+    "name": "NDUB Student Portal API",
+    "description": "Unofficial API documentation generated from observed NDUB Student Portal responses on 2026-10-27.\n\n## Authentication\nRun **Login** first. Its test script stores `accessToken` and `refreshToken` as collection variables. All student API requests automatically use `accessToken`.\n\n## Security\nKeep credentials and tokens private. The examples are sanitized and contain no real student data.\n\n## Stability\nThis is not a published NDUB API contract. Endpoints and response fields may change without notice.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{accessToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('Response is JSON', function () {",
+          "  pm.response.to.be.json;",
+          "});",
+          "pm.test('Request completed successfully', function () {",
+          "  pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+          "});"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api-ems.ndub.edu.bd",
+      "type": "string"
+    },
+    {
+      "key": "username",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "password",
+      "value": "",
+      "type": "secret"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "secret"
+    },
+    {
+      "key": "refreshToken",
+      "value": "",
+      "type": "secret"
+    },
+    {
+      "key": "semesterId",
+      "value": "33",
+      "type": "string"
+    },
+    {
+      "key": "runningCourseId",
+      "value": "662",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "description": "Create and refresh the JWT session used by the protected student endpoints.",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/authenticate/student-portal/student",
+            "description": "Authenticates a student. A successful response contains `data.accessToken` and `data.refreshToken`. The test script saves both as secret collection variables."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const payload = pm.response.json();",
+                  "if (payload.data?.accessToken) {",
+                  "  pm.collectionVariables.set('accessToken', payload.data.accessToken);",
+                  "}",
+                  "if (payload.data?.refreshToken) {",
+                  "  pm.collectionVariables.set('refreshToken', payload.data.refreshToken);",
+                  "}",
+                  "pm.test('Tokens were returned', function () {",
+                  "  pm.expect(payload.data?.accessToken).to.be.a('string').and.not.empty;",
+                  "  pm.expect(payload.data?.refreshToken).to.be.a('string').and.not.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "response": []
+        },
+        {
+          "name": "Refresh Session",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{refreshToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": "{{baseUrl}}/student-portal/refreshtoken",
+            "description": "Gets a fresh session using the refresh token as the bearer credential. This endpoint does not accept an expired access token in place of the refresh token."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const payload = pm.response.json();",
+                  "if (payload.data?.accessToken) {",
+                  "  pm.collectionVariables.set('accessToken', payload.data.accessToken);",
+                  "}",
+                  "if (payload.data?.refreshToken) {",
+                  "  pm.collectionVariables.set('refreshToken', payload.data.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Student",
+      "description": "Student identity and academic information.",
+      "item": [
+        {
+          "name": "Get Student Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/student-portal/student-profile-details",
+            "description": "Returns `profileInfo`, `advisorInfo`, and `creditSummary`. Profile fields include student identity, program, department, academic status, and contact information."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": {\n    \"profileInfo\": {\n      \"studentRoll\": \"STUDENT_ID\",\n      \"studentName\": \"Example Student\",\n      \"departmentCode\": \"DEPT\",\n      \"departmentName\": \"Example Department\",\n      \"programNameShort\": \"PROGRAM\",\n      \"level\": 1,\n      \"term\": 1,\n      \"batchName\": \"Example Batch\",\n      \"status\": \"Active\"\n    },\n    \"advisorInfo\": {\n      \"advisorName\": \"Example Advisor\",\n      \"mobileNumber\": \"REDACTED\",\n      \"userName\": \"ADVISOR_ID\"\n    },\n    \"creditSummary\": {\n      \"earnedCredits\": null,\n      \"incompleteCredits\": null,\n      \"totalCredits\": 140\n    }\n  },\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Offered Courses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/student-portal/fixed-credit/student-offered-courses",
+            "description": "Returns `data.offeredCourses[]`. Each course includes IDs, code, title, type, category, credits, contact hours, syllabus, registration status, and section."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": {\n    \"offeredCourses\": [\n      {\n        \"courseId\": 101,\n        \"courseCode\": \"CSE 101\",\n        \"courseTitle\": \"Example Course\",\n        \"courseType\": \"Theory\",\n        \"courseCategory\": \"Core\",\n        \"runningCourseCode\": \"CSE101-A\",\n        \"termId\": 1,\n        \"credit\": 3,\n        \"contactHour\": 3,\n        \"syllabusYear\": 2026,\n        \"registrationStatus\": \"Registered\",\n        \"sectionName\": \"A\"\n      }\n    ]\n  },\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Semesters & Courses",
+      "description": "Semester selection and registered course information.",
+      "item": [
+        {
+          "name": "Get Semester List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/student-portal/fixed-credit/students-semester-list",
+            "description": "Returns an array of available semesters with `semesterId`, name, type, label, value, and optional `isSemesterEnd`."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": [\n    {\n      \"semesterId\": 33,\n      \"semesterName\": \"Example Semester\",\n      \"semesterType\": \"Regular\",\n      \"value\": 33,\n      \"label\": \"Example Semester\",\n      \"isSemesterEnd\": false\n    }\n  ],\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Running Courses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student-portal/registered-course-list-by-running-semester?semesterId={{semesterId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["student-portal", "registered-course-list-by-running-semester"],
+              "query": [
+                {
+                  "key": "semesterId",
+                  "value": "{{semesterId}}",
+                  "description": "Semester identifier returned by Get Semester List."
+                }
+              ]
+            },
+            "description": "Returns registered courses for a semester. Each item contains course metadata and `courseTeachers[]`."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": [\n    {\n      \"runningCourseId\": 662,\n      \"courseId\": 101,\n      \"courseCode\": \"CSE 101\",\n      \"courseTitle\": \"Example Course\",\n      \"courseSection\": \"A\",\n      \"credit\": 3,\n      \"contactHour\": 3,\n      \"courseType\": \"Theory\",\n      \"courseTeachers\": [\n        {\n          \"userId\": 1,\n          \"username\": \"FACULTY_ID\",\n          \"facultyName\": \"Example Faculty\",\n          \"rank\": \"Lecturer\",\n          \"phoneNumber\": \"REDACTED\",\n          \"departmentCode\": \"DEPT\"\n        }\n      ]\n    }\n  ],\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Course Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student-portal/course-details-by-running-course-id?runningCourseId={{runningCourseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["student-portal", "course-details-by-running-course-id"],
+              "query": [
+                {
+                  "key": "runningCourseId",
+                  "value": "{{runningCourseId}}",
+                  "description": "Running course identifier returned by Get Running Courses."
+                }
+              ]
+            },
+            "description": "Returns metadata and teachers for one running course."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": {\n    \"runningCourseId\": 662,\n    \"courseId\": 101,\n    \"courseCode\": \"CSE 101\",\n    \"courseTitle\": \"Example Course\",\n    \"sectionName\": \"A\",\n    \"credit\": 3,\n    \"contactHour\": 3,\n    \"courseType\": \"Theory\",\n    \"registrationStatus\": \"Registered\",\n    \"courseTeachers\": []\n  },\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "description": "Semester-level attendance summaries and detailed class records.",
+      "item": [
+        {
+          "name": "Get Attendance Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student-portal/attendance-summary-by-semester?semesterId={{semesterId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["student-portal", "attendance-summary-by-semester"],
+              "query": [
+                {
+                  "key": "semesterId",
+                  "value": "{{semesterId}}",
+                  "description": "Semester identifier returned by Get Semester List."
+                }
+              ]
+            },
+            "description": "Returns student and semester metadata plus `attendanceSummary[]`. Each course summary includes present, absent, total-class counts, and percentage."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": {\n    \"studentRoll\": \"STUDENT_ID\",\n    \"studentName\": \"Example Student\",\n    \"semesterId\": 33,\n    \"semesterName\": \"Example Semester\",\n    \"attendanceSummary\": [\n      {\n        \"runningCourseId\": 662,\n        \"courseCode\": \"CSE 101\",\n        \"courseTitle\": \"Example Course\",\n        \"presentCount\": 10,\n        \"absentCount\": 2,\n        \"totalClass\": 12,\n        \"percentage\": 83.33\n      }\n    ]\n  },\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Class Attendance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student-portal/class-attendance-by-running-course-id?runningCourseId={{runningCourseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["student-portal", "class-attendance-by-running-course-id"],
+              "query": [
+                {
+                  "key": "runningCourseId",
+                  "value": "{{runningCourseId}}",
+                  "description": "Running course identifier returned by Get Running Courses."
+                }
+              ]
+            },
+            "description": "Returns total class and attendance counts plus individual `records[]` with date, time slot, status, exemptions, and remarks."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": {\n    \"totalClass\": 12,\n    \"totalPresent\": 10,\n    \"presentPercentage\": 83.33,\n    \"records\": [\n      {\n        \"classType\": \"Regular\",\n        \"classDate\": \"2026-10-01\",\n        \"classDay\": \"Thursday\",\n        \"classStatus\": \"Completed\",\n        \"sectionName\": \"A\",\n        \"timeSlot\": \"09:00 - 10:30\",\n        \"presentStatus\": \"Present\",\n        \"presentStatusShort\": \"P\",\n        \"isExempt\": false,\n        \"isAttendanceSubmitted\": true\n      }\n    ]\n  },\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Routine",
+      "description": "Weekly program schedule for a semester.",
+      "item": [
+        {
+          "name": "Get Program Routine",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student-portal/program-routine?semesterId={{semesterId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["student-portal", "program-routine"],
+              "query": [
+                {
+                  "key": "semesterId",
+                  "value": "{{semesterId}}",
+                  "description": "Semester identifier returned by Get Semester List."
+                }
+              ]
+            },
+            "description": "Returns routine rows. Each row has a `periodId`, room information, and a `days` object keyed by weekday. A scheduled day contains section, program, course, faculty, and routine IDs."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": [\n    {\n      \"periodId\": 1,\n      \"roomId\": 10,\n      \"roomName\": \"Room 101\",\n      \"days\": {\n        \"Sunday\": {\n          \"sectionName\": \"A\",\n          \"sectionId\": 1,\n          \"programId\": 1,\n          \"programColorCode\": \"#164E63\",\n          \"runningCourseId\": 662,\n          \"courseCode\": \"CSE 101\",\n          \"facultyMemberUserId\": 1,\n          \"facultyMemberName\": \"Example Faculty\",\n          \"routineId\": 100,\n          \"isNonAdminRCConfAllowed\": false,\n          \"clubActivity\": false\n        }\n      }\n    }\n  ],\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
