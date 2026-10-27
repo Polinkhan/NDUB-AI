@@ -1,0 +1,146 @@
+name: Deploy NDUB AI Assistant to EC2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ndub-ai-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build standalone application
+        run: npm run build
+
+      - name: Verify and archive standalone application
+        run: |
+          set -eu
+          test -f .next/standalone/server.js
+          test -d .next/standalone/.next/static
+
+          if find .next/standalone -maxdepth 1 -type f -name '.env*' | grep -q .; then
+            echo "An environment file was found in the deployment artifact." >&2
+            exit 1
+          fi
+
+          tar -C .next/standalone -czf ndub-ai-standalone.tar.gz .
+
+      - name: Copy artifact to EC2
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: ndub-ai-standalone.tar.gz
+          target: ${{ secrets.APP_DIR }}
+
+      - name: Deploy and restart application
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            set -eu
+
+            export NVM_DIR="$HOME/.nvm"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then
+              . "$NVM_DIR/nvm.sh"
+            fi
+
+            APP_ROOT="${{ secrets.APP_DIR }}"
+            APP_NAME="ndub-ai-assistant"
+            PM2_NAME="NDUB AI (5050)"
+            TARGET_DIR="$APP_ROOT/$APP_NAME"
+            RELEASE_DIR="$APP_ROOT/${APP_NAME}-release-${{ github.run_id }}-${{ github.run_attempt }}"
+            BACKUP_DIR="$APP_ROOT/${APP_NAME}-backup"
+            ARCHIVE="$APP_ROOT/ndub-ai-standalone.tar.gz"
+            ENV_FILE="$APP_ROOT/ndub-ai.env"
+
+            case "$APP_ROOT" in
+              /*) ;;
+              *) echo "APP_DIR must be an absolute path." >&2; exit 1 ;;
+            esac
+            if [ "$APP_ROOT" = "/" ]; then
+              echo "APP_DIR cannot be the filesystem root." >&2
+              exit 1
+            fi
+
+            command -v node >/dev/null
+            command -v pm2 >/dev/null
+            test -f "$ARCHIVE"
+            test -f "$ENV_FILE"
+
+            rm -rf "$RELEASE_DIR"
+            mkdir -p "$RELEASE_DIR"
+            tar -xzf "$ARCHIVE" -C "$RELEASE_DIR"
+            rm -f "$ARCHIVE"
+            test -f "$RELEASE_DIR/server.js"
+            ln -s "$ENV_FILE" "$RELEASE_DIR/.env"
+
+            rm -rf "$BACKUP_DIR"
+            if [ -d "$TARGET_DIR" ]; then
+              mv "$TARGET_DIR" "$BACKUP_DIR"
+            fi
+            mv "$RELEASE_DIR" "$TARGET_DIR"
+
+            cd "$TARGET_DIR"
+            if pm2 describe "$PM2_NAME" >/dev/null 2>&1; then
+              HOSTNAME=0.0.0.0 PORT=5050 pm2 restart "$PM2_NAME" --update-env
+            else
+              HOSTNAME=0.0.0.0 PORT=5050 pm2 start server.js --name "$PM2_NAME"
+            fi
+
+            healthy=false
+            for attempt in $(seq 1 15); do
+              if curl --fail --silent --show-error http://127.0.0.1:5050/login >/dev/null; then
+                healthy=true
+                break
+              fi
+              sleep 2
+            done
+
+            if [ "$healthy" != "true" ]; then
+              echo "Deployment health check failed; restoring the previous release." >&2
+              pm2 delete "$PM2_NAME" >/dev/null 2>&1 || true
+              rm -rf "$TARGET_DIR"
+
+              if [ -d "$BACKUP_DIR" ]; then
+                mv "$BACKUP_DIR" "$TARGET_DIR"
+                cd "$TARGET_DIR"
+                HOSTNAME=0.0.0.0 PORT=5050 pm2 start server.js --name "$PM2_NAME"
+              fi
+
+              exit 1
+            fi
+
+            pm2 save
+            rm -rf "$BACKUP_DIR"

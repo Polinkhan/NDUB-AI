@@ -37,3 +37,16 @@ HOSTNAME=0.0.0.0 npm run start
 ```
 
 To deploy only the artifact, copy `.next/standalone` to the server and run `node server.js` from that directory. Configure the variables documented in `.env.example` through the hosting platform or process environment, and use HTTPS in production so secure authentication cookies work correctly.
+
+## GitHub Actions deployment
+
+The workflow in `.github/workflows/deploy.yml` tests, lints, builds, and deploys the standalone application to EC2 whenever `main` is updated. It runs the application with PM2 on port `5050` and restores the previous release if the health check fails.
+
+Configure these GitHub repository secrets:
+
+- `EC2_HOST`: EC2 hostname or IP address
+- `EC2_USER`: SSH username
+- `EC2_SSH_KEY`: private SSH key
+- `APP_DIR`: absolute deployment parent directory, such as `/home/ubuntu/apps`
+
+On EC2, install Node.js 22 and PM2, then create `${APP_DIR}/ndub-ai.env` using the variables from `.env.example`. The environment file remains on EC2 and is never included in the deployment archive.
