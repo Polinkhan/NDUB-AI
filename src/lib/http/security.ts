@@ -1,7 +1,21 @@
+function parseOrigin(value: string) {
+  try {
+    return new URL(value).origin;
+  } catch {
+    return null;
+  }
+}
+
 export function isSameOrigin(request: Request) {
-  const origin = request.headers.get("origin");
-  if (!origin) return true;
-  return origin === new URL(request.url).origin;
+  const originHeader = request.headers.get("origin");
+  if (!originHeader) return true;
+
+  const origin = parseOrigin(originHeader);
+  if (!origin) return false;
+  if (origin === new URL(request.url).origin) return true;
+
+  const configuredOrigin = process.env.APP_ORIGIN;
+  return configuredOrigin ? origin === parseOrigin(configuredOrigin) : false;
 }
 
 export function noStoreJson(body: unknown, init?: ResponseInit) {

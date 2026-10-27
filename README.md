@@ -51,3 +51,12 @@ Configure these GitHub repository secrets:
 - `APP_ENV`: the complete contents of the production `.env` file
 
 On EC2, install Node.js 22, PM2, and `curl`. The workflow securely writes `APP_ENV` to `${APP_DIR}/ndub-ai.env`, keeps it outside the application release, and links it at runtime. It is never included in the standalone application archive or printed in the workflow logs.
+
+For production behind a reverse proxy, set `APP_ORIGIN=https://ndub.polinkhan.com` in `APP_ENV`. Configure the proxy to preserve the public request information:
+
+```nginx
+proxy_set_header Host $host;
+proxy_set_header X-Forwarded-Host $host;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_set_header X-Real-IP $remote_addr;
+```
