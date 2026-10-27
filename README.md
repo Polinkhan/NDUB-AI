@@ -48,5 +48,6 @@ Configure these GitHub repository secrets:
 - `EC2_USER`: SSH username
 - `EC2_SSH_KEY`: private SSH key
 - `APP_DIR`: absolute deployment parent directory, such as `/home/ubuntu/apps`
+- `APP_ENV`: the complete contents of the production `.env` file
 
-On EC2, install Node.js 22 and PM2, then create `${APP_DIR}/ndub-ai.env` using the variables from `.env.example`. The environment file remains on EC2 and is never included in the deployment archive.
+On EC2, install Node.js 22, PM2, and `curl`. The workflow securely writes `APP_ENV` to `${APP_DIR}/ndub-ai.env`, keeps it outside the application release, and links it at runtime. It is never included in the standalone application archive or printed in the workflow logs.

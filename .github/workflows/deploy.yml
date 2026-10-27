@@ -53,13 +53,26 @@ jobs:
 
           tar -C .next/standalone -czf ndub-ai-standalone.tar.gz .
 
+      - name: Prepare runtime environment
+        env:
+          APP_ENV: ${{ secrets.APP_ENV }}
+        run: |
+          set -eu
+          if [ -z "$APP_ENV" ]; then
+            echo "::error::The APP_ENV repository secret is missing or empty. Copy the contents of your production .env file into that secret."
+            exit 1
+          fi
+
+          umask 077
+          printf '%s\n' "$APP_ENV" > ndub-ai.env
+
       - name: Copy artifact to EC2
         uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: ndub-ai-standalone.tar.gz
+          source: ndub-ai-standalone.tar.gz,ndub-ai.env
           target: ${{ secrets.APP_DIR }}
 
       - name: Deploy and restart application
@@ -94,10 +107,27 @@ jobs:
               exit 1
             fi
 
-            command -v node >/dev/null
-            command -v pm2 >/dev/null
-            test -f "$ARCHIVE"
-            test -f "$ENV_FILE"
+            if ! command -v node >/dev/null 2>&1; then
+              echo "Node.js is not available for the SSH user. Install Node.js 22 or configure NVM's default version." >&2
+              exit 1
+            fi
+            if ! command -v pm2 >/dev/null 2>&1; then
+              echo "PM2 is not available for the SSH user. Install it with: npm install --global pm2" >&2
+              exit 1
+            fi
+            if ! command -v curl >/dev/null 2>&1; then
+              echo "curl is required for the deployment health check." >&2
+              exit 1
+            fi
+            if [ ! -f "$ARCHIVE" ]; then
+              echo "Deployment archive not found at $ARCHIVE. Check the APP_DIR secret and SCP step." >&2
+              exit 1
+            fi
+            if [ ! -f "$ENV_FILE" ]; then
+              echo "Runtime environment file not found at $ENV_FILE. Check the APP_ENV secret and SCP step." >&2
+              exit 1
+            fi
+            chmod 600 "$ENV_FILE"
 
             rm -rf "$RELEASE_DIR"
             mkdir -p "$RELEASE_DIR"
@@ -144,3 +174,7 @@ jobs:
 
             pm2 save
             rm -rf "$BACKUP_DIR"
+
+      - name: Remove sensitive runner files
+        if: always()
+        run: rm -f ndub-ai.env ndub-ai-standalone.tar.gz
