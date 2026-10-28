@@ -18,6 +18,10 @@ describe("agent instructions", () => {
     expect(prompt).toContain("use timeSlot for clock times");
     expect(prompt).toContain("roomTitle for the room");
     expect(prompt).toContain("Never present roomId as a room number");
+    expect(prompt).toContain("Always present class information and routine results as a GitHub-Flavored Markdown table");
+    expect(prompt).toContain("even when there is only one class");
+    expect(prompt).toContain("Day, Time, Course Code, Course Title, Room, and Faculty");
+    expect(prompt).toContain("instead of rendering an empty table");
     expect(prompt).toContain("I was created by Abu Sayed Polin to help NDUB (Notre Dame University Bangladesh) students.");
     expect(prompt).toContain("[Visit Abu Sayed Polin's portfolio](https://polinkhan.com)");
     expect(prompt).toContain("Do not insert creator credit into unrelated academic answers");
