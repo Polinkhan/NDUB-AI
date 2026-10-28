@@ -1,7 +1,7 @@
 import { tool } from "ai";
 import { z } from "zod";
 import { PortalClient } from "@/lib/portal/client";
-import type { ProgramRoutineRow, RoutinePeriod, RunningCourse, Semester } from "@/lib/portal/types";
+import type { ProgramRoutineRow, RoutinePeriod, RoutineRoom, RunningCourse, Semester } from "@/lib/portal/types";
 import { academicSemesterForDate, currentDateTime, isoDateInTimeZone, UNIVERSITY_TIME_ZONE } from "./time";
 import { searchTavily } from "./tavily";
 
@@ -84,8 +84,10 @@ export function buildStudentRoutine(
   courses: RunningCourse[],
   routine: ProgramRoutineRow[],
   periods: RoutinePeriod[] = [],
+  rooms: RoutineRoom[] = [],
 ) {
   const periodsById = new Map(periods.map((period) => [period.periodId, period]));
+  const roomsById = new Map(rooms.map((room) => [room.roomId, room]));
   const isRegisteredSlot = (runningCourseId: number, sectionName?: string) =>
     courses.some((course) => {
       if (course.runningCourseId !== runningCourseId) return false;
@@ -100,6 +102,7 @@ export function buildStudentRoutine(
       Object.entries(row.days ?? {}).flatMap(([day, slot]) => {
         if (!slot || !isRegisteredSlot(slot.runningCourseId, slot.sectionName)) return [];
         const period = periodsById.get(row.periodId);
+        const room = row.roomId === undefined ? undefined : roomsById.get(row.roomId);
         return [
           {
             day,
@@ -107,7 +110,8 @@ export function buildStudentRoutine(
             periodIndex: period?.periodIndex,
             timeSlot: period?.timeSlot,
             roomId: row.roomId,
-            roomName: row.roomName,
+            roomTitle: room?.roomTitle ?? row.roomName ?? undefined,
+            isLab: room?.isLab,
             runningCourseId: slot.runningCourseId,
             courseCode: slot.courseCode,
             sectionName: slot.sectionName,
@@ -136,7 +140,7 @@ export function buildStudentRoutine(
     })),
     schedule,
     note:
-      "Class times are resolved from the portal's semester-specific routine period list. If timeSlot is missing, report that the portal did not provide a time and do not invent one. roomId is an internal identifier, not a room number; only name a room when roomName is present.",
+      "Class times and room titles are resolved from the portal's period and active-room lists. If timeSlot or roomTitle is missing, report that the portal did not provide it and do not infer it from an ID.",
   };
 }
 
@@ -148,14 +152,15 @@ export async function getStudentRoutine(client: PortalClient, semesterId?: numbe
   const resolvedSemesterId = semesterId ?? semester?.semesterId;
   if (!resolvedSemesterId) throw new Error("No semester is available for this student.");
 
-  const [courses, routine, periods] = await Promise.all([
+  const [courses, routine, periods, rooms] = await Promise.all([
     client.getRunningCourses(resolvedSemesterId),
     client.getProgramRoutine(resolvedSemesterId),
     client.getRoutinePeriods(resolvedSemesterId),
+    client.getRoutineRooms(),
   ]);
   return {
     semester: semester ?? { semesterId: resolvedSemesterId },
-    ...buildStudentRoutine(courses, routine, periods),
+    ...buildStudentRoutine(courses, routine, periods, rooms),
   };
 }
 
@@ -210,7 +215,7 @@ export function createStudentTools(accessToken: string, now = new Date()) {
     }),
     get_program_routine: tool({
       description:
-        "Get this student's complete weekly routine with authoritative semester clock times. This one tool already resolves the current semester, checks registered courses, joins period time slots, and filters the large program routine to the student's own classes. Do not call profile, course-list, or period-list tools for a routine request.",
+        "Get this student's complete weekly routine with authoritative semester clock times and room titles. This one tool already resolves the current semester, checks registered courses, joins period and room data, and filters the large program routine to the student's own classes. Do not call profile, course-list, period-list, or room-list tools for a routine request.",
       inputSchema: optionalSemester,
       execute: ({ semesterId }) => getStudentRoutine(client, semesterId, now),
     }),
@@ -222,6 +227,12 @@ export function createStudentTools(accessToken: string, now = new Date()) {
         const resolvedSemesterId = await resolveSemesterId(client, semesterId, now);
         return { semesterId: resolvedSemesterId, periods: await client.getRoutinePeriods(resolvedSemesterId) };
       },
+    }),
+    get_routine_rooms: tool({
+      description:
+        "Get the portal's active routine rooms with authoritative room titles, capacities, and lab status.",
+      inputSchema: z.object({}),
+      execute: () => client.getRoutineRooms(),
     }),
     get_today_attendance: tool({
       description: "Reliably check every registered course for attendance records dated today in Asia/Dhaka.",

@@ -82,4 +82,22 @@ describe("PortalClient", () => {
     expect(requestUrl.searchParams.get("semesterId")).toBe("33");
     expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer access-token");
   });
+
+  it("loads active routine rooms with their display titles", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(
+      jsonResponse({
+        success: true,
+        data: [{ roomId: 5, totalCapacity: 58, roomTitle: "311", isLab: false }],
+      }),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const rooms = await new PortalClient("access-token").getRoutineRooms();
+    expect(rooms[0]).toMatchObject({ roomId: 5, roomTitle: "311" });
+    const requestUrl = fetchMock.mock.calls[0][0] as URL;
+    expect(requestUrl.pathname).toBe("/student-portal/room/list");
+    expect(requestUrl.searchParams.get("showableInRoutine")).toBe("true");
+    expect(requestUrl.searchParams.get("status")).toBe("Active");
+    expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer access-token");
+  });
 });

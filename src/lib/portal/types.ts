@@ -83,6 +83,14 @@ export interface RoutinePeriod {
   [key: string]: unknown;
 }
 
+export interface RoutineRoom {
+  roomId: number;
+  totalCapacity: number | null;
+  roomTitle: string;
+  isLab: boolean;
+  [key: string]: unknown;
+}
+
 export interface AttendanceRecord {
   classDate: string;
   classDay?: string;

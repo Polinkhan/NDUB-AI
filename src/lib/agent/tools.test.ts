@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { PortalClient } from "@/lib/portal/client";
-import type { ProgramRoutineRow, RoutinePeriod, RunningCourse } from "@/lib/portal/types";
+import type { ProgramRoutineRow, RoutinePeriod, RoutineRoom, RunningCourse } from "@/lib/portal/types";
 import { buildStudentRoutine, getStudentRoutine, getTodayAttendance, resolveSemesterId, selectCurrentSemester } from "./tools";
 
 function portalStub(overrides: Partial<PortalClient> = {}) {
@@ -30,6 +30,9 @@ function portalStub(overrides: Partial<PortalClient> = {}) {
         isBreakPeriod: false,
         semesterId: 33,
       },
+    ]),
+    getRoutineRooms: vi.fn().mockResolvedValue([
+      { roomId: 5, totalCapacity: 58, roomTitle: "311", isLab: false },
     ]),
     getClassAttendance: vi.fn(async (id: number) => {
       if (id === 2) throw new Error("temporary failure");
@@ -83,16 +86,20 @@ describe("student portal tool helpers", () => {
     await expect(resolveSemesterId(portal)).rejects.toThrow("No semester");
   });
 
-  it("automatically enriches routine classes with authoritative period times", async () => {
+  it("automatically enriches routine classes with authoritative period times and room titles", async () => {
     const portal = portalStub();
     const result = await getStudentRoutine(portal, undefined, new Date("2026-10-27T06:00:00.000Z"));
 
     expect(portal.getRoutinePeriods).toHaveBeenCalledWith(33);
+    expect(portal.getRoutineRooms).toHaveBeenCalledOnce();
     expect(result.schedule[0]).toMatchObject({
       courseCode: "CSE 101",
       periodId: 12,
       periodIndex: 1,
       timeSlot: "8:00AM - 9:20AM",
+      roomId: 5,
+      roomTitle: "311",
+      isLab: false,
     });
   });
 
@@ -102,6 +109,7 @@ describe("student portal tool helpers", () => {
         runningCourses: { response: { data: RunningCourse[] } };
         programRoutine: { response: { data: ProgramRoutineRow[] } };
         routinePeriods: { response: { data: RoutinePeriod[] } };
+        routineRooms: { response: { data: RoutineRoom[] } };
       };
     };
     const sourceRoutine = sample.endpoints.programRoutine.response.data;
@@ -109,6 +117,7 @@ describe("student portal tool helpers", () => {
       sample.endpoints.runningCourses.response.data,
       sourceRoutine,
       sample.endpoints.routinePeriods.response.data,
+      sample.endpoints.routineRooms.response.data,
     );
 
     expect(sourceRoutine).toHaveLength(105);
@@ -118,7 +127,9 @@ describe("student portal tool helpers", () => {
     expect(result.schedule.find((item) => item.periodId === 12)).toMatchObject({
       periodIndex: 1,
       timeSlot: "8:00AM - 9:20AM",
+      roomId: 5,
+      roomTitle: "311",
     });
-    expect(result.note).toContain("period list");
+    expect(result.note).toContain("period and active-room lists");
   });
 });

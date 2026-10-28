@@ -22,6 +22,7 @@ All protected requests inherit bearer authentication from the collection. **Refr
 - Course details
 - Attendance summary
 - Class attendance
+- Active routine room list
 - Routine period list
 - Program routine
 

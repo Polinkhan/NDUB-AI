@@ -899,6 +899,50 @@
         "debugHint": null
       }
     },
+    "routineRooms": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/room/list?showableInRoutine=true&status=Active",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Successfully filtered rooms.",
+        "data": [
+          { "roomId": 3, "totalCapacity": 40, "roomTitle": "309", "isLab": false },
+          { "roomId": 4, "totalCapacity": 40, "roomTitle": "310", "isLab": false },
+          { "roomId": 5, "totalCapacity": 58, "roomTitle": "311", "isLab": false },
+          { "roomId": 6, "totalCapacity": 24, "roomTitle": "315", "isLab": false },
+          { "roomId": 7, "totalCapacity": 42, "roomTitle": "412", "isLab": false },
+          { "roomId": 8, "totalCapacity": 44, "roomTitle": "413", "isLab": false },
+          { "roomId": 9, "totalCapacity": 60, "roomTitle": "414", "isLab": false },
+          { "roomId": 10, "totalCapacity": 24, "roomTitle": "417", "isLab": false },
+          { "roomId": 11, "totalCapacity": null, "roomTitle": "418", "isLab": true },
+          { "roomId": 12, "totalCapacity": 24, "roomTitle": "419", "isLab": false },
+          { "roomId": 13, "totalCapacity": 44, "roomTitle": "510", "isLab": false },
+          { "roomId": 14, "totalCapacity": 42, "roomTitle": "511", "isLab": false },
+          { "roomId": 34, "totalCapacity": 20, "roomTitle": "516", "isLab": true },
+          { "roomId": 15, "totalCapacity": 63, "roomTitle": "512", "isLab": false },
+          { "roomId": 31, "totalCapacity": 15, "roomTitle": "513", "isLab": true },
+          { "roomId": 32, "totalCapacity": 20, "roomTitle": "514", "isLab": true },
+          { "roomId": 33, "totalCapacity": 20, "roomTitle": "515", "isLab": true },
+          { "roomId": 16, "totalCapacity": 47, "roomTitle": "605", "isLab": false },
+          { "roomId": 17, "totalCapacity": 44, "roomTitle": "606", "isLab": false },
+          { "roomId": 18, "totalCapacity": 63, "roomTitle": "607", "isLab": false },
+          { "roomId": 19, "totalCapacity": 15, "roomTitle": "608", "isLab": false },
+          { "roomId": 20, "totalCapacity": 30, "roomTitle": "609", "isLab": false },
+          { "roomId": 21, "totalCapacity": 48, "roomTitle": "610", "isLab": false },
+          { "roomId": 22, "totalCapacity": 44, "roomTitle": "701", "isLab": false },
+          { "roomId": 23, "totalCapacity": 41, "roomTitle": "702", "isLab": false },
+          { "roomId": 24, "totalCapacity": 63, "roomTitle": "703", "isLab": false },
+          { "roomId": 25, "totalCapacity": 33, "roomTitle": "704", "isLab": true },
+          { "roomId": 27, "totalCapacity": 29, "roomTitle": "706", "isLab": false },
+          { "roomId": 28, "totalCapacity": 30, "roomTitle": "709", "isLab": true },
+          { "roomId": 29, "totalCapacity": 30, "roomTitle": "710", "isLab": true }
+        ],
+        "errors": null,
+        "debugHint": null
+      }
+    },
     "routinePeriods": {
       "method": "GET",
       "endpoint": "https://api-ems.ndub.edu.bd/student-portal/routine/period/list?semesterId=33",

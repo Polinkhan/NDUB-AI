@@ -16,7 +16,8 @@ describe("agent instructions", () => {
     expect(prompt).toContain("Spring (January-June) and Fall (July-December)");
     expect(prompt).toContain("For routine questions, call get_program_routine only");
     expect(prompt).toContain("use timeSlot for clock times");
-    expect(prompt).toContain("roomId as an internal identifier");
+    expect(prompt).toContain("roomTitle for the room");
+    expect(prompt).toContain("Never present roomId as a room number");
     expect(prompt).toContain("I was created by Abu Sayed Polin to help NDUB (Notre Dame University Bangladesh) students.");
     expect(prompt).toContain("[Visit Abu Sayed Polin's portfolio](https://polinkhan.com)");
     expect(prompt).toContain("Do not insert creator credit into unrelated academic answers");

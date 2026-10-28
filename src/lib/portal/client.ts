@@ -4,6 +4,7 @@ import type {
   PortalTokens,
   ProgramRoutineRow,
   RoutinePeriod,
+  RoutineRoom,
   RunningCourse,
   Semester,
   StudentProfile,
@@ -152,6 +153,13 @@ export class PortalClient {
 
   getRoutinePeriods(semesterId: number) {
     return this.get<RoutinePeriod[]>("/student-portal/routine/period/list", { semesterId });
+  }
+
+  getRoutineRooms() {
+    return this.get<RoutineRoom[]>("/student-portal/room/list", {
+      showableInRoutine: "true",
+      status: "Active",
+    });
   }
 }
 
