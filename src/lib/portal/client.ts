@@ -3,6 +3,7 @@ import type {
   PortalEnvelope,
   PortalTokens,
   ProgramRoutineRow,
+  RoutinePeriod,
   RunningCourse,
   Semester,
   StudentProfile,
@@ -147,6 +148,10 @@ export class PortalClient {
 
   getProgramRoutine(semesterId: number) {
     return this.get<ProgramRoutineRow[]>("/student-portal/program-routine", { semesterId });
+  }
+
+  getRoutinePeriods(semesterId: number) {
+    return this.get<RoutinePeriod[]>("/student-portal/routine/period/list", { semesterId });
   }
 }
 

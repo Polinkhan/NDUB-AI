@@ -899,6 +899,84 @@
         "debugHint": null
       }
     },
+    "routinePeriods": {
+      "method": "GET",
+      "endpoint": "https://api-ems.ndub.edu.bd/student-portal/routine/period/list?semesterId=33",
+      "status": "success",
+      "response": {
+        "success": true,
+        "status": 200,
+        "message": "Success",
+        "data": [
+          {
+            "periodId": 12,
+            "periodIndex": 1,
+            "timeSlot": "8:00AM - 9:20AM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 13,
+            "periodIndex": 2,
+            "timeSlot": "9:25AM - 10:45AM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 14,
+            "periodIndex": 3,
+            "timeSlot": "10:50AM - 12:10PM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 15,
+            "periodIndex": 4,
+            "timeSlot": "12:10PM - 12:25PM",
+            "isBreakPeriod": true,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 16,
+            "periodIndex": 5,
+            "timeSlot": "12:25PM - 1:45PM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 17,
+            "periodIndex": 6,
+            "timeSlot": "1:50PM - 3:10PM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 18,
+            "periodIndex": 7,
+            "timeSlot": "3:15PM - 4:35PM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          },
+          {
+            "periodId": 19,
+            "periodIndex": 8,
+            "timeSlot": "4:40PM - 6:00PM",
+            "isBreakPeriod": false,
+            "programType": "Bachelor",
+            "semesterId": 33
+          }
+        ],
+        "errors": null,
+        "debugHint": null
+      }
+    },
     "programRoutine": {
       "method": "GET",
       "endpoint": "https://api-ems.ndub.edu.bd/student-portal/program-routine?semesterId=33",

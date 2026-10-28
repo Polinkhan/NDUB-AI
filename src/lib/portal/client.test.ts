@@ -57,4 +57,29 @@ describe("PortalClient", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(jsonResponse({ success: true })));
     await expect(new PortalClient("access-token").getStudentProfile()).rejects.toMatchObject({ code: "INVALID_RESPONSE" });
   });
+
+  it("loads semester-specific routine periods with bearer authentication", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(
+      jsonResponse({
+        success: true,
+        data: [
+          {
+            periodId: 12,
+            periodIndex: 1,
+            timeSlot: "8:00AM - 9:20AM",
+            isBreakPeriod: false,
+            semesterId: 33,
+          },
+        ],
+      }),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const periods = await new PortalClient("access-token").getRoutinePeriods(33);
+    expect(periods[0].timeSlot).toBe("8:00AM - 9:20AM");
+    const requestUrl = fetchMock.mock.calls[0][0] as URL;
+    expect(requestUrl.pathname).toBe("/student-portal/routine/period/list");
+    expect(requestUrl.searchParams.get("semesterId")).toBe("33");
+    expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer access-token");
+  });
 });

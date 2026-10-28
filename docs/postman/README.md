@@ -22,6 +22,7 @@ All protected requests inherit bearer authentication from the collection. **Refr
 - Course details
 - Attendance summary
 - Class attendance
+- Routine period list
 - Program routine
 
 Examples are based on the exported response structures but contain sanitized placeholder values. No real credentials, tokens, or student details are included.

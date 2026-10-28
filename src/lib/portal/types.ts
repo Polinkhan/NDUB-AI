@@ -73,6 +73,16 @@ export interface ProgramRoutineRow {
   [key: string]: unknown;
 }
 
+export interface RoutinePeriod {
+  periodId: number;
+  periodIndex: number;
+  timeSlot: string;
+  isBreakPeriod: boolean;
+  programType?: string;
+  semesterId: number;
+  [key: string]: unknown;
+}
+
 export interface AttendanceRecord {
   classDate: string;
   classDay?: string;

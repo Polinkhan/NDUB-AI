@@ -408,6 +408,37 @@
               "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Request successful\",\n  \"data\": [\n    {\n      \"periodId\": 1,\n      \"roomId\": 10,\n      \"roomName\": \"Room 101\",\n      \"days\": {\n        \"Sunday\": {\n          \"sectionName\": \"A\",\n          \"sectionId\": 1,\n          \"programId\": 1,\n          \"programColorCode\": \"#164E63\",\n          \"runningCourseId\": 662,\n          \"courseCode\": \"CSE 101\",\n          \"facultyMemberUserId\": 1,\n          \"facultyMemberName\": \"Example Faculty\",\n          \"routineId\": 100,\n          \"isNonAdminRCConfAllowed\": false,\n          \"clubActivity\": false\n        }\n      }\n    }\n  ],\n  \"errors\": null,\n  \"debugHint\": null\n}"
             }
           ]
+        },
+        {
+          "name": "Get Routine Period List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student-portal/routine/period/list?semesterId={{semesterId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["student-portal", "routine", "period", "list"],
+              "query": [
+                {
+                  "key": "semesterId",
+                  "value": "{{semesterId}}",
+                  "description": "Semester identifier returned by Get Semester List."
+                }
+              ]
+            },
+            "description": "Returns the authoritative period index and clock-time slot for the selected semester, including break periods."
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"status\": 200,\n  \"message\": \"Success\",\n  \"data\": [\n    {\n      \"periodId\": 12,\n      \"periodIndex\": 1,\n      \"timeSlot\": \"8:00AM - 9:20AM\",\n      \"isBreakPeriod\": false,\n      \"programType\": \"Bachelor\",\n      \"semesterId\": 33\n    },\n    {\n      \"periodId\": 15,\n      \"periodIndex\": 4,\n      \"timeSlot\": \"12:10PM - 12:25PM\",\n      \"isBreakPeriod\": true,\n      \"programType\": \"Bachelor\",\n      \"semesterId\": 33\n    }\n  ],\n  \"errors\": null,\n  \"debugHint\": null\n}"
+            }
+          ]
         }
       ]
     }

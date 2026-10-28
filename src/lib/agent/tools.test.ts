@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { PortalClient } from "@/lib/portal/client";
-import type { ProgramRoutineRow, RunningCourse } from "@/lib/portal/types";
-import { buildStudentRoutine, getTodayAttendance, resolveSemesterId, selectCurrentSemester } from "./tools";
+import type { ProgramRoutineRow, RoutinePeriod, RunningCourse } from "@/lib/portal/types";
+import { buildStudentRoutine, getStudentRoutine, getTodayAttendance, resolveSemesterId, selectCurrentSemester } from "./tools";
 
 function portalStub(overrides: Partial<PortalClient> = {}) {
   return {
@@ -14,6 +14,22 @@ function portalStub(overrides: Partial<PortalClient> = {}) {
     getRunningCourses: vi.fn().mockResolvedValue([
       { runningCourseId: 1, courseCode: "CSE 101", courseTitle: "Programming" },
       { runningCourseId: 2, courseCode: "MAT 101", courseTitle: "Mathematics" },
+    ]),
+    getProgramRoutine: vi.fn().mockResolvedValue([
+      {
+        periodId: 12,
+        roomId: 5,
+        days: { Wednesday: { runningCourseId: 1, courseCode: "CSE 101" } },
+      },
+    ]),
+    getRoutinePeriods: vi.fn().mockResolvedValue([
+      {
+        periodId: 12,
+        periodIndex: 1,
+        timeSlot: "8:00AM - 9:20AM",
+        isBreakPeriod: false,
+        semesterId: 33,
+      },
     ]),
     getClassAttendance: vi.fn(async (id: number) => {
       if (id === 2) throw new Error("temporary failure");
@@ -67,20 +83,42 @@ describe("student portal tool helpers", () => {
     await expect(resolveSemesterId(portal)).rejects.toThrow("No semester");
   });
 
+  it("automatically enriches routine classes with authoritative period times", async () => {
+    const portal = portalStub();
+    const result = await getStudentRoutine(portal, undefined, new Date("2026-10-27T06:00:00.000Z"));
+
+    expect(portal.getRoutinePeriods).toHaveBeenCalledWith(33);
+    expect(result.schedule[0]).toMatchObject({
+      courseCode: "CSE 101",
+      periodId: 12,
+      periodIndex: 1,
+      timeSlot: "8:00AM - 9:20AM",
+    });
+  });
+
   it("reduces the real program routine sample to only registered classes", () => {
     const sample = JSON.parse(readFileSync(resolve(process.cwd(), "docs/ndub-sample-response.json"), "utf8")) as {
       endpoints: {
         runningCourses: { response: { data: RunningCourse[] } };
         programRoutine: { response: { data: ProgramRoutineRow[] } };
+        routinePeriods: { response: { data: RoutinePeriod[] } };
       };
     };
     const sourceRoutine = sample.endpoints.programRoutine.response.data;
-    const result = buildStudentRoutine(sample.endpoints.runningCourses.response.data, sourceRoutine);
+    const result = buildStudentRoutine(
+      sample.endpoints.runningCourses.response.data,
+      sourceRoutine,
+      sample.endpoints.routinePeriods.response.data,
+    );
 
     expect(sourceRoutine).toHaveLength(105);
     expect(result.schedule).toHaveLength(10);
     expect(JSON.stringify(sourceRoutine).length).toBeGreaterThan(70_000);
     expect(JSON.stringify(result).length).toBeLessThan(5_000);
-    expect(result.note).toContain("no clock times");
+    expect(result.schedule.find((item) => item.periodId === 12)).toMatchObject({
+      periodIndex: 1,
+      timeSlot: "8:00AM - 9:20AM",
+    });
+    expect(result.note).toContain("period list");
   });
 });
